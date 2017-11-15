@@ -1,0 +1,39 @@
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+:focus {
+  outline: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.clearfix {
+  zoom: 1;
+
+  &::after,
+  &::before {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+}
+
+button {
+  border: none;
+}
