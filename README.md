@@ -5,7 +5,7 @@ bulid project
 `npm run build` or `yarn build`
 
 ### problem
-use antd component 需要 updating `scripts` in package.json file，but 修改后会导致webpack.config中配置的`alias`别名无法使用
+use antd component 需要 updating `scripts` in package.json file，but 修改后会导致webpack.config中配置的`alias`别名无法使用,需要自己更改配置，不能按照官网的配置来
 antd的配置
 ```
 "scripts": {
