@@ -1,14 +1,14 @@
-/* Libs */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-/* Componetns */
+import { withRouter } from 'react-router-dom'
+
 import { Form, Icon, Input, Button, Checkbox } from 'antd'
 import message from 'Components/message'
-/* Actions */
+
 import * as actions from './redux'
-/* Styles */
+
 import './style.scss'
 
 const FormItem = Form.Item
@@ -23,6 +23,7 @@ class Login extends Component {
       login: PropTypes.func.isRequired,
     }).isRequired,
     loading: PropTypes.bool.isRequired,
+    history: PropTypes.shape({}).isRequired,
   }
 
   /**
@@ -31,12 +32,14 @@ class Login extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    const { form: { validateFields }, actions: { login } } = this.props
+    const { form: { validateFields }, actions: { login }, history } = this.props
 
     validateFields((err, values) => {
       if (!err) {
         login(values)
-          .then()
+          .then(() => {
+            history.push('/home')
+          })
           .catch((error) => {
             message.error(error)
           })
@@ -99,4 +102,4 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actions, dispatch),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form.create()(Login))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Form.create()(Login)))

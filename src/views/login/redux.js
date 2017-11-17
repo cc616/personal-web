@@ -1,3 +1,7 @@
+import Cookies from 'universal-cookie'
+
+const cookies = new Cookies()
+
 const LOAD_LOGING_PENDING = 'LOAD_LOGING_PENDING'
 const LOAD_LOGING_SUCCESS = 'LOAD_LOGING_SUCCESS'
 const LOAD_LOGING_FAIL = 'LOAD_LOGING_FAIL'
@@ -8,12 +12,12 @@ export const login = opts => dispatch => (
     const { username, password } = opts
 
     if (username === 'lcc' && password === 'lcc') {
-      resolve()
       dispatch({ type: LOAD_LOGING_SUCCESS })
-      // hashHistory.push('/canvasImg')
+      cookies.set('token', username)
+      resolve()
     } else {
-      reject()
       dispatch({ type: LOAD_LOGING_FAIL })
+      reject()
     }
   })
 )

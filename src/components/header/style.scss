@@ -1,0 +1,52 @@
+#header {
+  $prefix: logo;
+  background-color: #222;
+  height: 60px;
+  padding: 0 20px;
+  color: white;
+  line-height: 60px;
+
+  .#{$prefix} {
+    animation: logo-spin infinite 20s linear;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    top: 16%;
+  }
+
+  .#{$prefix}-title {
+    font-size: 1.5em;
+  }
+
+  .nav {
+    float: right;
+  }
+
+  .menu {
+    display: inline-block;
+    padding: 0 12px;
+
+    a {
+      height: 100%;
+      display: block;
+    }
+  }
+
+  .active {
+    color: red;
+
+    &:after {
+      content: "";
+      background-color: rgb(52, 162, 240);
+      font-weight: bold;
+      height: 3px;
+      display: block;
+      transition: all .45s;
+    }
+  }
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

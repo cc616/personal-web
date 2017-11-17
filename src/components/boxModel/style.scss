@@ -1,0 +1,34 @@
+.box-model-wrap {
+  $prefix: box;
+
+  width: 300px;
+  height: 200px;
+
+  .#{$prefix}-margin {
+    background: #e2e2e2;
+    width: 300px;
+    height: 200px;
+    border: 1px #999 dashed;
+  }
+
+  .#{$prefix}-border {
+    background: #c5c5c5;
+    width: 260px;
+    height: 160px;
+    margin: auto;
+  }
+
+  .#{$prefix}-padding {
+    background: #f3f3f3;
+    width: 220px;
+    height: 120px;
+    margin: auto;
+  }
+
+  .#{$prefix}-content {
+    width: 180px;
+    height: 80px;
+    margin: auto;
+    border: 1px #999 dashed;
+  }
+}
