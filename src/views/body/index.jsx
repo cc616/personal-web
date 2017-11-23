@@ -12,7 +12,7 @@ class Body extends Component {
     const { children } = this.props
 
     return (
-      <div className='body-wrap'>
+      <div className='body-wrapper'>
         <Header />
         {children}
       </div>

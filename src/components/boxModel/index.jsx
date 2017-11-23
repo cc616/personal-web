@@ -4,7 +4,7 @@ import './style.scss'
 class BoxModel extends Component {
   render() {
     return (
-      <div className='box-model-wrap'>
+      <div className='box-model-wrapper'>
         <div className='box-margin'>
           <div className='box-border'>
             <div className='box-padding'>

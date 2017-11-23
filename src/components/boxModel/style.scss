@@ -1,4 +1,4 @@
-.box-model-wrap {
+.box-model-wrapper {
   $prefix: box;
 
   // width: 300px;
@@ -36,6 +36,5 @@
 .linear-background-wrapper {
   height: 492px;
   width: 100%;
-  border: 1px solid red;
   background: linear-gradient(to left,#8254EA,#BC35F1,#8254EA);
 }

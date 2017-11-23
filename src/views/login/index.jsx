@@ -51,7 +51,7 @@ class Login extends Component {
     const { form: { getFieldDecorator }, loading } = this.props
 
     return (
-      <div className='login-wrap'>
+      <div className='login-wrapper'>
         <Form onSubmit={this.handleSubmit} className='login-form'>
           <FormItem>
             {getFieldDecorator('username', {

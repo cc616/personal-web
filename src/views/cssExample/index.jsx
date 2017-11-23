@@ -5,7 +5,7 @@ import './style.scss'
 class CssExample extends Component {
   render() {
     return (
-      <div className='css-example-wrap'>
+      <div className='css-example-wrapper'>
         <BoxModel />
       </div>
     )
