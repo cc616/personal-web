@@ -14,6 +14,9 @@ class BoxModel extends Component {
             </div>
           </div>
         </div>
+        <div className='linear-background-wrapper'>
+          线性背景
+        </div>
       </div>
     )
   }
