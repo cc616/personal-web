@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Router, Redirect } from 'react-router'
-import { HashRouter } from 'react-router-dom'
+import { HashRouter, Switch } from 'react-router-dom'
 import Cookies from 'universal-cookie'
 import Login from 'Views/login'
 import Body from 'Views/body'
@@ -20,11 +20,14 @@ const router = (
           <Redirect to='/login' />
         )
       )}/>
-      <Route path='/login' component={Login} />
-      <Body>
-        <Route path='/home' component={Home} />
-        <Route path='/cssExample' component={CssExample} />
-      </Body>
+
+      <Switch>
+        <Route exact path='/login' component={Login} />
+        <Body>
+          <Route path='/home' component={Home} />
+          <Route path='/cssExample' component={CssExample} />
+        </Body>
+      </Switch>
     </div>
   </HashRouter>
 )
