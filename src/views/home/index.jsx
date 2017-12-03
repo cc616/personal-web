@@ -6,10 +6,15 @@ class Home extends Component {
   render() {
     return (
       <div className='home-wrapper'>
-        <p className='App-intro'>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button type='primary'>Button</Button>
+        <div className='input'>
+          <input type='text' />
+        </div>
+        <div className='test-width clearfix'>
+          <div className='item one'>1</div>
+          <div className='item two'>2</div>
+          <div className='item three'>3</div>
+          <div className='item four'>4</div>
+        </div>
       </div>
     )
   }

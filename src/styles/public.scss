@@ -46,3 +46,12 @@ a, a:focus {
 button {
   border: none;
 }
+
+input {
+  border: 1px solid #efefef;
+  height: 32px;
+  padding: 1px 4px;
+  border-radius: 4px;
+  line-height: 28px;
+  width: 100%;
+}

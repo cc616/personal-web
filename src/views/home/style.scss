@@ -1,1 +1,46 @@
 
+.home-wrapper {
+  padding: 20px;
+  
+  .input {
+    width: 220px;
+  }
+
+  .test-width {
+    background: #efefef;
+    width: 1014px;
+    margin: 20px auto 0;
+    padding: 16px;
+
+    .item {
+      margin-right: 28px;
+      height: 82px;
+      float: left;
+      width: calc((100% - 84px) / 4);
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @mixin borderStyle($borderColor) {
+        border: 1px solid $borderColor;
+      }
+
+      &.one {
+        @include borderStyle(#79cac9);
+      }
+
+      &.two {
+        @include borderStyle(#f66b5d);  
+      }
+
+      &.three {
+        @include borderStyle(#f4d237);  
+      }
+
+      &.four {
+        @include borderStyle(#f9beee);  
+      }
+    }
+  }
+}

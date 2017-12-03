@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+  <head>
+    <style>
+
+      .clearfix {
+        zoom: 1;
+      }
+
+        .clearfix::after,
+        .clearfix::before {
+          content: " ";
+          display: table;
+        }
+
+        .clearfix:after {
+          clear: both;
+          visibility: hidden;
+          font-size: 0;
+          height: 0;
+        }
+
+      .test {
+        background: #efefef;
+        width: 982px;
+        margin: 20px auto 0;
+      }
+
+      .item:last-child {
+        margin-right: 0;
+      }
+
+      .item {
+        margin-right: 28px;
+        height: 82px;
+        float: left;
+        width: calc(898px / 4);
+      }
+
+      .one {
+        background: #79cac9;
+      }
+
+      .two {
+        background: #f66b5d;  
+      }
+
+      .three {
+        background: #f4d237;  
+      }
+
+      .four {
+        background: #f9beee;  
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test clearfix">
+      <div class="item one">1</div>
+      <div class="item two">2</div>
+      <div class="item three">3</div>
+      <div class="item four">4</div>
+    </div>
+  </body>
+</html>
