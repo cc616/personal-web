@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Button } from 'antd'
+import { Route } from 'react-router'
 import Header from 'Components/header'
+import Home from 'Views/home'
+import CssExample from 'Layout/cssExample'
+
+import './style.scss'
 
 class Body extends Component {
-  static propTypes = {
-    children: PropTypes.arrayOf(PropTypes.element),
-  }
 
   render() {
-    const { children } = this.props
 
     return (
       <div className='body-wrapper'>
         <Header />
-        {children}
+        <Route path='/home' component={Home} />
+        <Route path='/cssExample' component={CssExample} />
       </div>
     )
   }

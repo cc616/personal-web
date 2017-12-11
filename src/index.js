@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { createStore, compose, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import rootReducer from 'Redux'
-import Router from 'Router'
+import App from 'Layout/app'
 import registerServiceWorker from './registerServiceWorker'
 
 // redux devTool
@@ -21,7 +21,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    {Router}
+    <App />
   </Provider>,
   document.getElementById('root')
 )

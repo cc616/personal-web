@@ -2,26 +2,33 @@
   <head>
     <style>
 
+      * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+
       .clearfix {
         zoom: 1;
       }
 
-        .clearfix::after,
-        .clearfix::before {
-          content: " ";
-          display: table;
-        }
+      .clearfix::after,
+      .clearfix::before {
+        content: " ";
+        display: table;
+      }
 
-        .clearfix:after {
-          clear: both;
-          visibility: hidden;
-          font-size: 0;
-          height: 0;
-        }
+      .clearfix:after {
+        clear: both;
+        visibility: hidden;
+        font-size: 0;
+        height: 0;
+      }
 
       .test {
         background: #efefef;
-        width: 982px;
+        width: 1014px;
+        padding: 0 16px;
         margin: 20px auto 0;
       }
 
@@ -33,23 +40,23 @@
         margin-right: 28px;
         height: 82px;
         float: left;
-        width: calc(898px / 4);
+        width: calc((100% - 84px) / 4);
       }
 
       .one {
-        background: #79cac9;
+        border: 1px solid #79cac9;
       }
 
       .two {
-        background: #f66b5d;  
+        border: 1px solid #f66b5d;  
       }
 
       .three {
-        background: #f4d237;  
+        border: 1px solid #f4d237;  
       }
 
       .four {
-        background: #f9beee;  
+        border: 1px solid #f9beee;  
       }
     </style>
   </head>

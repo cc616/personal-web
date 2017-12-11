@@ -12,10 +12,10 @@ class Header extends Component {
         <span className='logo-title'>Welcome to cc</span>
         <div className='nav'>
           <span className='menu'>
-            <NavLink to='/home' activeClassName='active' replace>首页</NavLink>
+            <NavLink to='/home' activeClassName='active'>首页</NavLink>
           </span>
           <span className='menu'>
-            <NavLink to='/cssExample' replace>样式例子</NavLink>
+            <NavLink to='/cssExample' activeClassName='active'>样式例子</NavLink>
           </span>
         </div>
       </header>

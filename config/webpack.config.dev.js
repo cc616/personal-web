@@ -85,7 +85,7 @@ module.exports = {
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
       Components: paths.appSrcComponents,
-      Router: paths.appSrcRouter,
+      Layout: paths.appSrcLayout,
       Styles: paths.appSrcStyles,
       Redux: paths.appSrcRedux,
       Views: paths.appSrcViews,
@@ -235,7 +235,7 @@ module.exports = {
               {
                 loader: require.resolve('less-loader'),
                 options: {
-                  modifyVars: { '@primary-color': '#34a2f0' },
+                  modifyVars: { '@primary-color': '#1890ff' },
                 },
               },
             ],

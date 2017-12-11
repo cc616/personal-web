@@ -1,0 +1,30 @@
+.nav-wrapper {
+	float: left;
+	width: 100px;
+	margin-right: 16px;
+	height: 100%;
+	background: #fff;
+	text-align: center;
+	padding: 10px 0;
+
+	.menu {
+		line-height: 32px;
+		height: 32px;
+		margin-bottom: 4px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		a {
+			display: block;
+  		color: #333;
+		}
+
+		a.active {
+			color: #1890ff;
+	
+			border-left: 2px solid #1890ff;
+		}
+	}
+}

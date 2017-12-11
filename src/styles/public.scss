@@ -3,10 +3,11 @@ html, body {
   width: 100%;
 }
 
-#root, #app {
-  height: 100%;
-  width: 100%;
-}
+// * {
+//   box-sizing: border-box;
+//   -moz-box-sizing: border-box;
+//   -webkit-box-sizing: border-box;
+// }
 
 ul, li {
   margin: 0;
