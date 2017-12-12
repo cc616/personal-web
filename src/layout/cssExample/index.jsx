@@ -3,6 +3,7 @@ import { Route, Redirect } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import BoxModel from 'Views/boxModel'
 import LineaBg from 'Views/lineaBg'
+import EqualModule from 'Views/equalModule'
 import Nav from 'Components/nav'
 
 import './style.scss'
@@ -15,6 +16,9 @@ class CssExample extends Component {
     }, {
       title: '线性背景',
       path: '/cssExample/lineaBg',
+    }, {
+      title: '平分模块',
+      path: '/cssExample/equalModule',
     }]
 
     return (
@@ -23,6 +27,7 @@ class CssExample extends Component {
         <div className='container'>
           <Route path='/cssExample/boxModel' component={BoxModel} />
           <Route path='/cssExample/lineaBg' component={LineaBg} />
+          <Route path='/cssExample/equalModule' component={EqualModule} />
           <Route exact path='/cssExample' render={() => (
             <Redirect to='/cssExample/boxModel' />
           )} />

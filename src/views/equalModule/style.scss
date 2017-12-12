@@ -1,0 +1,67 @@
+
+.equal-module-wrapper {
+
+	.title {
+		color: #999;
+		font-size: 16px;
+		line-height: 32px;
+    margin-bottom: 10px;
+  }
+
+  .item {
+    @mixin borderStyle($borderColor) {
+      border: 1px solid $borderColor;
+    }
+  
+    &.one {
+      @include borderStyle(#79cac9);
+    }
+  
+    &.two {
+      @include borderStyle(#f66b5d);  
+    }
+  
+    &.three {
+      @include borderStyle(#f4d237);  
+    }
+  
+    &.four {
+      @include borderStyle(#f9beee);  
+    }
+  }
+  
+  .calc-content {
+    background: #efefef;
+    width: 1014px;
+    padding: 16px;
+    margin-bottom: 20px;
+
+    .item {
+      margin-right: 28px;
+      height: 82px;
+      float: left;
+      width: calc((100% - 84px) / 4);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .flex-content {
+    display: flex;
+    background: #efefef;
+    width: 1014px;
+    padding: 16px;
+
+    .item {
+      flex: 1;
+      margin-right: 28px;
+      height: 82px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

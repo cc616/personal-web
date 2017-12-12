@@ -1,7 +1,5 @@
 .box-model-wrapper {
   $prefix: box;
-
-  // width: 300px;
   height: 200px;
 
   .#{$prefix}-margin {
@@ -31,12 +29,6 @@
     margin: auto;
     border: 1px #999 dashed;
   }
-}
-
-.linear-background-wrapper {
-  height: 492px;
-  width: 100%;
-  background: linear-gradient(to left,#8254EA,#BC35F1,#8254EA);
 }
 
 .wavy-line-wrapper {

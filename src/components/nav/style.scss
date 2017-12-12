@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .nav-wrapper {
 	float: left;
 	width: 100px;
@@ -18,13 +20,17 @@
 
 		a {
 			display: block;
-  		color: #333;
+			color: #333;
+			
+			&:hover {
+				color: $primary-hover-color ;
+			}
 		}
 
 		a.active {
-			color: #1890ff;
-	
-			border-left: 2px solid #1890ff;
+			color: $primary-color;
+			border-left: 2px solid $primary-color;
+			text-indent: -2px;
 		}
 	}
 }
