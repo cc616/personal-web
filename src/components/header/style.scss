@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 #header {
   $prefix: logo;
   background-color: #222;
@@ -29,13 +31,17 @@
     a {
       height: 60px;
       display: block;
-      color: #fff
+      color: #fff;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
 
   a.active {
-    color: #1890ff;
-    border-bottom: 2px solid #1890ff;
+    color: $primary-color;
+    border-bottom: 2px solid $primary-color;
   }
 }
 

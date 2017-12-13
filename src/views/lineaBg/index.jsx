@@ -6,7 +6,7 @@ import './style.scss'
 class LineaBg extends Component {
   render() {
     return (
-      <div className='lineaBg-wrapper'>
+      <div className='linea-background-wrapper'>
         <div className='item'>
           <div className='title'>一个盒子实现</div>
           <div className='one'></div>

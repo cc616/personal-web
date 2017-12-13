@@ -6,8 +6,6 @@ import LineaBg from 'Views/lineaBg'
 import EqualModule from 'Views/equalModule'
 import Nav from 'Components/nav'
 
-import './style.scss'
-
 class CssExample extends Component {
   render() {
     const navMenu = [{

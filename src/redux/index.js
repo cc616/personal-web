@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-// import body from 'Views/body/redux'
 import login from 'Views/login/redux'
+import fontSetting from 'Views/fontSetting/redux'
 
 export default combineReducers({
-  // body,
   login,
+  fontSetting,
 })

@@ -1,4 +1,6 @@
-.lineaBg-wrapper {
+@import '../../styles/variables.scss';
+
+.linea-background-wrapper {
 	.item {
     margin-bottom: 20px;
 
@@ -8,7 +10,7 @@
   }
 
   .title {
-    font-size: 16px;
+    font-size: $font-size + 4;
     color: #999;
     line-height: 32px;
     margin-bottom: 10px;

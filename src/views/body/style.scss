@@ -21,4 +21,12 @@
 		font-size: 0;
 		height: 0;
 	}
+
+	.container {
+		float: left;
+		width: calc(100% - 116px);
+		height: 100%;
+		background: #fff;
+		padding: 16px;
+	}
 }

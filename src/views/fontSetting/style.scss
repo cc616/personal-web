@@ -1,0 +1,83 @@
+@import '../../styles/variables.scss';
+
+.font-setting-wrapper {
+
+	.button {
+		margin-bottom: 20px;
+	}
+
+	.group {
+		display: flex;
+	}
+	
+	.item {
+		flex-basis: 280px;
+		margin-bottom: 16px;
+
+		.font-select {
+			width: 120px;
+		}
+	}
+
+	.label{
+		display: inline-block;
+		vertical-align: middle;
+
+		&::after {
+			content: ':';
+			margin: 0 6px 0 4px;
+		}
+	}
+
+	.font-input {
+		display: inline-block;
+		vertical-align: middle;
+		width: 80px;
+	}
+
+	.color-input {
+		width: 106px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.color-select {
+		width: 32px;
+		height: 32px;
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 16px;
+		border-radius: 3px;
+		border: 1px solid $border-color;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.color-group {
+		position: relative;
+	}
+
+	.color-picker {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 212px;
+	}
+
+	.color-picker-cover {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	.title {
+		font-size: $font-size + 4;
+    color: #999;
+    line-height: 32px;
+    margin-bottom: 10px;
+	}
+}

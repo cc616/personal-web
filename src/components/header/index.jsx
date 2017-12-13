@@ -9,13 +9,16 @@ class Header extends Component {
     return (
       <header id='header'>
         <img src={logo} className='logo' alt='logo' />
-        <span className='logo-title'>Welcome to cc</span>
+        <span className='logo-title'>cc</span>
         <div className='nav'>
           <span className='menu'>
             <NavLink to='/home' activeClassName='active'>首页</NavLink>
           </span>
           <span className='menu'>
-            <NavLink to='/cssExample' activeClassName='active'>样式例子</NavLink>
+            <NavLink to='/cssExample' activeClassName='active'>样式用例</NavLink>
+          </span>
+          <span className='menu'>
+            <NavLink to='/cssTool' activeClassName='active'>小工具</NavLink>
           </span>
         </div>
       </header>

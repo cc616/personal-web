@@ -23,15 +23,15 @@ SimSun,                   /* Win old              中易宋体 */
 sans-serif;               /* System Fallback */
 
 // font size
-$font-size-base: 12px;
-$font-size-lg: $font-size-base + 2px;
-$font-size-xl: $font-size-base + 4px;
+$font-size: 12px;
+$font-size-lg: $font-size + 2px;
+$font-size-xl: $font-size + 4px;
 
 
 // color
-$primary-color        : #69c0ff;
-$primary-hover-color  : #91d5ff;
-$primary-active-color : #40a9ff;
+$primary-color        : #1890ff;
+$primary-hover-color  : #40a9ff;
+$primary-active-color : #096dd9;
 $success-color        : #00a854;
 $error-color          : #f04134;
 $warning-color        : #ffbf00;
