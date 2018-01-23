@@ -2,10 +2,10 @@ import React from 'react'
 import { Route, Router, Redirect } from 'react-router'
 import { HashRouter, Switch } from 'react-router-dom'
 import Cookies from 'universal-cookie'
-import Login from 'Views/login'
+import Login from 'Routes/login'
 import Header from 'Components/header'
-import Body from 'Views/body'
-import CssExample from 'Layout/cssExample'
+import Body from 'Routes/body'
+import CssExample from 'Routes/cssExample'
 
 import './style.scss'
 
