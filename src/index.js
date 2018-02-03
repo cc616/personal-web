@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import 'Styles/index.scss'
 import { Provider } from 'mobx-react'
-import store from 'Stores'
-import App from 'Routes/app'
+import stores from 'Stores'
+import Route from 'Routes'
 import registerServiceWorker from './registerServiceWorker'
 
 ReactDOM.render(
-  <Provider {...store}>
-    <App />
+  <Provider {...stores}>
+    <Route />
   </Provider>,
   document.getElementById('root')
 )
