@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Route, Redirect } from 'react-router'
 import { NavLink } from 'react-router-dom'
-import BoxModel from 'Views/boxModel'
-import LineaBg from 'Views/lineaBg'
-import EqualModule from 'Views/equalModule'
+import BoxModel from 'Routes/boxModel'
+import LineaBg from 'Routes/lineaBg'
+import EqualModule from 'Routes/equalModule'
 import Nav from 'Components/nav'
 
 class CssExample extends Component {

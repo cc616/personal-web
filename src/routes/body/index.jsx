@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router'
 import Header from 'Components/header'
-import Home from 'Views/home'
-import CssExample from 'Layout/cssExample'
-import CssTool from 'Layout/cssTool'
+import Home from 'Routes/home'
+import CssExample from 'Routes/cssExample'
+import CssTool from 'Routes/cssTool'
 
 import './style.scss'
 

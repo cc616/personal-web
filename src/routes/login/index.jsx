@@ -1,29 +1,28 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+import { observer, inject } from 'mobx-react'
 
 import { Form, Icon, Input, Button, Checkbox } from 'antd'
 import message from 'Components/message'
-
-import * as actions from './redux'
 
 import './style.scss'
 
 const FormItem = Form.Item
 
+@inject('authStore')
+@observer
 class Login extends Component {
   static propTypes = {
     form: PropTypes.shape({
       validateFields: PropTypes.func.isRequired,
       getFieldDecorator: PropTypes.func.isRequired,
     }).isRequired,
-    actions: PropTypes.shape({
+    authStore: PropTypes.shape({
       login: PropTypes.func.isRequired,
-    }).isRequired,
-    loading: PropTypes.bool.isRequired,
-    history: PropTypes.shape({}).isRequired,
+      loginLoading: PropTypes.bool.isRequired,
+      isAuthenticated: PropTypes.bool.isRequired,
+    }),
   }
 
   /**
@@ -32,23 +31,26 @@ class Login extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    const { form: { validateFields }, actions: { login }, history } = this.props
+    const { form: { validateFields }, history, authStore: { login } } = this.props
 
     validateFields((err, values) => {
       if (!err) {
         login(values)
-          .then(() => {
-            history.push('/home')
-          })
-          .catch((error) => {
-            message.error(error)
-          })
       }
     })
   }
 
   render() {
-    const { form: { getFieldDecorator }, loading } = this.props
+    const {
+      form: { getFieldDecorator },
+      authStore: { loginLoading, isAuthenticated },
+    } = this.props
+
+    if (isAuthenticated) {
+      return (
+        <Redirect to='/home' />
+      )
+    }
 
     return (
       <div className='login-wrapper'>
@@ -83,9 +85,9 @@ class Login extends Component {
               type='primary'
               htmlType='submit'
               className='login-button'
-              loading={loading}
+              loading={loginLoading}
             >
-              { loading ? '登录中' : '登录' }
+              { loginLoading ? '登录中' : '登录' }
             </Button>
           </FormItem>
         </Form>
@@ -94,12 +96,4 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  loading: state.login.loading,
-})
-
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actions, dispatch),
-})
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Form.create()(Login)))
+export default Form.create()(Login)

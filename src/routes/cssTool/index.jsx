@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Redirect } from 'react-router'
 import { NavLink } from 'react-router-dom'
-import FontSetting from 'Views/fontSetting'
+import FontSetting from 'Routes/fontSetting'
 import Nav from 'Components/nav'
 
 class CssTool extends Component {
