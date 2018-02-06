@@ -208,10 +208,21 @@ class FontSetting extends Component {
       background: `rgba(${ rgba.r }, ${ rgba.g }, ${ rgba.b }, ${ rgba.a })`,
     }
 
+    const fontFamilies = {
+      '微软雅黑': {
+        font: 'Microsoft YaHei',
+        family: 'Sans-serif',
+      },
+      '宋体': {
+        font: '宋体',
+        family: 'Serif'
+      },
+    }
+
     const styles = reactCSS({
       'default': {
         fontStyle: {
-          fontFamily,
+          fontFamily: `'${fontFamilies[fontFamily].font}', ${fontFamilies[fontFamily].family}`,
           fontSize: `${fontSize}px`,
           lineHeight: `${fontLineHeight}px`,
           ...backgroundStyle
