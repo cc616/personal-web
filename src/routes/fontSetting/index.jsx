@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import reactCSS from 'reactcss'
 import _ from 'lodash'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
 import { Button, Input, Select } from 'antd'
 import { ChromePicker } from 'react-color'
 
@@ -314,15 +312,4 @@ class FontSetting extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  fontFamily: state.fontSetting.fontFamily,
-  fontSize: state.fontSetting.fontSize,
-  fontLineHeight: state.fontSetting.fontLineHeight,
-  fontBackground: state.fontSetting.fontBackground,
-})
-
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actions, dispatch),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(FontSetting)
+export default FontSetting

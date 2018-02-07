@@ -4,9 +4,11 @@ import Cookies from 'universal-cookie'
 
 const cookie = new Cookies()
 
+const isAuthenticated = () => cookie.get('token') === 'isAuthenticated'
+
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-    cookie.get('isAuthenticated') ? (
+    isAuthenticated() ? (
       <Component {...props}/>
     ) : (
       <Redirect to={{

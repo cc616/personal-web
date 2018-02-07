@@ -25,6 +25,10 @@ class Login extends Component {
     }),
   }
 
+  state = {
+    isAuthenticated: false,
+  }
+
   /**
    * 点击登录
    */
@@ -36,6 +40,7 @@ class Login extends Component {
     validateFields((err, values) => {
       if (!err) {
         login(values)
+        this.setState({ isAuthenticated: true })
       }
     })
   }
@@ -45,10 +50,11 @@ class Login extends Component {
       form: { getFieldDecorator },
       authStore: { loginLoading, isAuthenticated },
     } = this.props
-
-    if (isAuthenticated) {
+    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    
+    if (this.state.isAuthenticated) {
       return (
-        <Redirect to='/home' />
+        <Redirect to={from} />
       )
     }
 

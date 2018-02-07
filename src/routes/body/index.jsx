@@ -4,6 +4,7 @@ import Header from 'Components/header'
 import Home from 'Routes/home'
 import CssExample from 'Routes/cssExample'
 import CssTool from 'Routes/cssTool'
+import PrivateRoute from 'Routes/privateRoutes'
 
 import './style.scss'
 
@@ -14,9 +15,8 @@ class Body extends Component {
     return (
       <div className='body-wrapper'>
         <Header />
-        <Route path='/home' component={Home} />
-        <Route path='/cssExample' component={CssExample} />
-        <Route path='/cssTool' component={CssTool} />
+        <PrivateRoute path='/cssExample' component={CssExample} />
+        <PrivateRoute path='/cssTool' component={CssTool} />
       </div>
     )
   }
