@@ -16,7 +16,7 @@ const withSubscription = WrappedComponent => (
   class extends Component {
     render() {
       return (
-        <div>
+        <div className='body-wrapper'>
           <Header />
           <WrappedComponent {...this.props} />
         </div>

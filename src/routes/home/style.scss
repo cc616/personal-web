@@ -1,6 +1,50 @@
-
 .home-wrapper {
-  margin: 16px;
-  padding: 16px;
   background: #fff;
+}
+
+.banner-wrapper {
+  height: 400px;
+
+  img {
+    height: 400px;
+    width: 100%;
+  }
+}
+
+.picture-wrapper {
+  position: relative;
+  width: 280px;
+  height: 400px;
+
+  &:hover {
+    cursor: pointer;
+    
+    .picture-wrapper__info {
+      background: rgba(0, 0, 0, .4);
+      display: block;
+    }
+  }
+
+  &__background {
+    width: 280px;
+    height: 400px;
+    z-index: 4;
+  }
+
+  &__info {
+    color: #fff;
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+    padding: 16px;
+    transition: all 0.35s ease-in-out;
+
+    .title {
+      font-size: 16px;
+    }
+  }
 }
