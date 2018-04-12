@@ -277,4 +277,8 @@ module.exports = {
   performance: {
     hints: false,
   },
+  // global variable
+  externals: {
+    jquery: 'window.$',
+  },
 };
