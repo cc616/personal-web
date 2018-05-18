@@ -1,0 +1,13 @@
+.pinterest-wrapper {
+  padding: 60px 100px;
+
+  .container {
+    display: flex;
+  }
+
+  .column {
+    display: flex;
+    flex-flow: column wrap;
+    width: calc(100% / 5);
+  }
+}

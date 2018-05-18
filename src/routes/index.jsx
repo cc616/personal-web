@@ -7,6 +7,7 @@ import Home from 'Routes/home'
 import Body from 'Routes/body'
 import CssExample from 'Routes/cssExample'
 import CssTool from 'Routes/cssTool'
+import Pinterest from 'Layouts/pinterest'
 
 import PrivateRoute from './privateRoutes'
 
@@ -32,6 +33,7 @@ const App = () => (
       <Switch>
         <Route path='/login' component={Login} />
         <Route path='/home' component={withSubscription(Home)} />
+        <Route path='/pinterest' component={Pinterest} />
         <PrivateRoute path='/cssExample' component={withSubscription(CssExample)} />
         <PrivateRoute path='/cssTool' component={withSubscription(CssTool)} />
       </Switch>
