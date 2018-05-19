@@ -4,7 +4,7 @@ import Header from 'Components/header'
 import Home from 'Routes/home'
 import CssExample from 'Routes/cssExample'
 import CssTool from 'Routes/cssTool'
-import PrivateRoute from 'Routes/privateRoutes'
+import PrivateRoute from 'Components/privateRoute'
 
 import './style.scss'
 
