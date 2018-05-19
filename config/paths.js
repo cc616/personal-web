@@ -53,7 +53,7 @@ module.exports = {
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
   appComponents: resolveApp('src/components'),
-  appLayouts: resolveApp('src/layout'),
+  appLayouts: resolveApp('src/layouts'),
   appStyles: resolveApp('src/styles'),
   appServices: resolveApp('src/services'),
   appUtils: resolveApp('src/utils'),
