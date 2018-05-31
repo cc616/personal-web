@@ -1,43 +1,45 @@
 import React, { Component } from 'react'
 import { Route, Redirect } from 'react-router'
 import { HashRouter, Switch } from 'react-router-dom'
+import { Provider } from 'mobx-react'
+
+import stores from 'Stores'
+
+import BasicLayout from 'Layouts/basicLayout'
+import Pinterest from 'Layouts/pinterest'
+import SpecialHover from 'Layouts/specialHover'
+
+import PrivateRoute from 'Components/privateRoute'
+
 import Login from 'Routes/login'
-import Header from 'Components/header'
 import Home from 'Routes/home'
 import Body from 'Routes/body'
 import CssExample from 'Routes/cssExample'
 import CssTool from 'Routes/cssTool'
 import Pinterest from 'Layouts/pinterest'
 
-import PrivateRoute from './privateRoutes'
-
 import './style.scss'
 
-const withSubscription = WrappedComponent => (
-  class extends Component {
-    render() {
-      return (
-        <div>
-          <Header />
-          <WrappedComponent {...this.props} />
-        </div>
-      )
-    }
-  }
-)
-
-const App = () => (
+const Routes = () => (
   <HashRouter>
     <div className='app-wrapper'>
       <Route exact path='/' render={() => <Redirect to='/home' /> } />
       <Switch>
         <Route path='/login' component={Login} />
-        <Route path='/home' component={withSubscription(Home)} />
+        <Route path='/home' component={BasicLayout(Home)} />
         <Route path='/pinterest' component={Pinterest} />
-        <PrivateRoute path='/cssExample' component={withSubscription(CssExample)} />
-        <PrivateRoute path='/cssTool' component={withSubscription(CssTool)} />
+        <Route path='/specialHover' component={SpecialHover} />
+        <PrivateRoute path='/cssExample' component={BasicLayout(CssExample)} />
+        <PrivateRoute path='/cssTool' component={BasicLayout(CssTool)} />
       </Switch>
     </div>
   </HashRouter>
 )
+
+const App = () => (
+  <Provider {...stores}>
+    <Routes />
+  </Provider>
+)
+
 export default App
