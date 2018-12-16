@@ -16,6 +16,7 @@ import Home from 'Routes/home'
 import Body from 'Routes/body'
 import CssExample from 'Routes/cssExample'
 import CssTool from 'Routes/cssTool'
+import Pinterest from 'Layouts/pinterest'
 
 import './style.scss'
 
