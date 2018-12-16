@@ -25,7 +25,7 @@ const Routes = () => (
       <Route exact path='/' render={() => <Redirect to='/home' /> } />
       <Switch>
         <Route path='/login' component={Login} />
-        <Route path='/home' component={BasicLayout(Home)} />
+        <Route path='/home' component={Home} />
         <Route path='/pinterest' component={Pinterest} />
         <Route path='/specialHover' component={SpecialHover} />
         <PrivateRoute path='/cssExample' component={BasicLayout(CssExample)} />
