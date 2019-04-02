@@ -380,7 +380,5 @@ module.exports = {
     child_process: 'empty',
   },
   // global variable
-  externals: {
-    jquery: 'window.$',
-  },
+  externals: {},
 };

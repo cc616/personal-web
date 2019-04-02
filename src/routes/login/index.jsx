@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom'
 import { observer, inject } from 'mobx-react'
 
 import { Form, Icon, Input, Button, Checkbox } from 'antd'
-import message from 'Components/message'
 
 import './style.scss'
 
@@ -35,7 +34,7 @@ class Login extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    const { form: { validateFields }, history, authStore: { login } } = this.props
+    const { form: { validateFields }, authStore: { login } } = this.props
 
     validateFields((err, values) => {
       if (!err) {
@@ -48,7 +47,7 @@ class Login extends Component {
   render() {
     const {
       form: { getFieldDecorator },
-      authStore: { loginLoading, isAuthenticated },
+      authStore: { loginLoading },
     } = this.props
     const { from } = this.props.location.state || { from: { pathname: '/' } }
     

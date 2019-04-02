@@ -4,27 +4,28 @@ import reactCSS from 'reactcss'
 import _ from 'lodash'
 import { Button, Input, Select } from 'antd'
 import { ChromePicker } from 'react-color'
-
-import * as actions from './redux'
+import { observer, inject } from 'mobx-react'
 
 import './style.scss'
 
 const Option = Select.Option
 
+@inject('fontSettingStore')
+@observer
 class FontSetting extends Component {
 
   static propTypes = {
-    actions: PropTypes.shape({
+    fontSettingStore: PropTypes.shape({
       resettingFontStyle: PropTypes.func.isRequired,
       changeFontFamily: PropTypes.func.isRequired,
       changeFontSize: PropTypes.func.isRequired,
       changeFontLineHeight: PropTypes.func.isRequired,
       changeFontBackground: PropTypes.func.isRequired,
     }).isRequired,
-    fontFamily: PropTypes.string.isRequired,
-    fontSize: PropTypes.number.isRequired,
-    fontLineHeight: PropTypes.number.isRequired,
-    fontBackground: PropTypes.shape({}).isRequired,
+    fontFamily: PropTypes.string,
+    fontSize: PropTypes.number,
+    fontLineHeight: PropTypes.number,
+    fontBackground: PropTypes.shape({}),
   }
 
   state = {
@@ -44,15 +45,15 @@ class FontSetting extends Component {
   // }
 
   handleClick = () => {
-    const { actions: { resettingFontStyle } } = this.props
+    const { fontSettingStore } = this.props
 
-    resettingFontStyle()
+    fontSettingStore.resettingFontStyle()
   }
 
   handleSelectChange = (value) => {
-    const { actions: { changeFontFamily } } = this.props
+    const { fontSettingStore } = this.props
 
-    changeFontFamily(value)
+    fontSettingStore.changeFontFamily(value)
   }
   
   handleChange = (e) => {
@@ -89,11 +90,11 @@ class FontSetting extends Component {
   }
 
   updateValue = (name, value) => {
-    const { actions: { changeFontSize, changeFontLineHeight } } = this.props
+    const { fontSettingStore } = this.props
 
     return ({
-      fontSize: () => changeFontSize(Number(value)),
-      lineHeight: () => changeFontLineHeight(Number(value)),
+      fontSize: () => fontSettingStore.changeFontSize(Number(value)),
+      lineHeight: () => fontSettingStore.changeFontLineHeight(Number(value)),
     }[name]())
   }
 
@@ -167,9 +168,9 @@ class FontSetting extends Component {
   )
 
   updateBackground = (options) => {
-    const { actions: { changeFontBackground } } = this.props
+    const { fontSettingStore } = this.props
     
-    changeFontBackground(options)
+    fontSettingStore.changeFontBackground(options)
   }
 
   handleChoiceColor = () => {
@@ -186,7 +187,6 @@ class FontSetting extends Component {
 
   handleColorChange = (color) => {
     const { hex, rgb } = color
-    const { actions: { changeFontBackground } } = this.props
 
     const options = {
       rgba: rgb,
@@ -197,8 +197,11 @@ class FontSetting extends Component {
   };
 
   render() {
-    const { displayColorPicker, color } = this.state
-    const { fontFamily, fontSize, fontLineHeight, fontBackground: { rgba, hex } } = this.props
+    const { displayColorPicker } = this.state
+    const {
+      fontFamily, fontSize, fontLineHeight,
+      fontBackground: { rgba, hex },
+    } = this.props.fontSettingStore
 
     const fontBackgroundValue = hex.substring(1)
 

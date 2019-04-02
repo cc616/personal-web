@@ -278,7 +278,5 @@ module.exports = {
     hints: false,
   },
   // global variable
-  externals: {
-    jquery: 'window.$',
-  },
+  externals: {},
 };
