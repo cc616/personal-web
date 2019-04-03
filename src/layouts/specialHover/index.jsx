@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'antd'
 import _ from 'lodash'
-import banner from 'Medias/home/banner_01.jpg'
 import hoverPosition from 'Utils/hover'
 import classnames from 'classnames'
 
